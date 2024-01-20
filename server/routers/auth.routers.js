@@ -68,4 +68,36 @@ const registerUser = router.post("/register", upload.single('profileImage'), asy
     }
 })
 
-export { registerUser }
+// User login
+const loginUser = router.post("/login" ,async (req, res) => {
+    try {
+        // Take the information from the login form
+        const {email, password} = req.body
+
+        // Check if user exists
+        const user = await User.findOne({ email })
+        if(user) {
+            return res.status(408).json({ message: "User does not exists."})
+        }
+
+        // Compare the password with the hashed password
+        const isMatching = await bcrypt.compare(password, user.password)
+        if(!isMatching) {
+            return res.status(400).json({ message: "Invalid credentials."})
+        }
+
+        // Generate JWT token
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY)
+        delete user.password
+
+        res.status(200).json({ token, user })
+    } catch (err) {
+        console.log("ERROR: Login error - ", err)
+        res.status(200).json({ error: err.message })
+    }
+})
+
+export { 
+    registerUser,
+    loginUser
+}
