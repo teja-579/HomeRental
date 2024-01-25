@@ -7,10 +7,7 @@ import '../styles/Navbar.scss';
 
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
-  const user = useSelector((state) => {
-    console.log("State", state)
-    return state.user});
-  console.log("User", user);
+  const user = useSelector((state) => state.user);
   return (
     <div className='navbar'>
         <a href="/">
