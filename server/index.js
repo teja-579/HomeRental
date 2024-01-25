@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { registerUser } from './routers/auth.routers.js'; 
+import authRoutes from './routers/auth.routers.js'; 
 
 dotenv.config();
 
@@ -19,12 +19,12 @@ app.use(express.static("public"))
 //   });
 
 // ROUTES
-app.use("/auth", registerUser)
+app.use("/auth", authRoutes)
 
 // Mongoose setup
 mongoose.connect(`${process.env.MONGODB_URL}/${process.env.MONGODB_NAME}`)
 .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(process.env.PORT || 7000, () => {
         console.log(`Server is listening on port: ${process.env.PORT}`)
     })
 })
