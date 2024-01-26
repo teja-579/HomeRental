@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routers/auth.routers.js'; 
+import listingRoutes from './routers/listing.routers.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.static("public"))
 
 // ROUTES
 app.use("/auth", authRoutes)
+app.use("/properties", listingRoutes)
 
 // Mongoose setup
 mongoose.connect(`${process.env.MONGODB_URL}/${process.env.MONGODB_NAME}`)

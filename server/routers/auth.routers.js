@@ -90,7 +90,6 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY)
         delete user.password
 
-        console.log("User in route: ", user)
         res.status(200).json({ token, user })
     } catch (err) {
         console.log("ERROR: Login error - ", err)
