@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routers/auth.routers.js'; 
 import listingRoutes from './routers/listing.routers.js';
+import bookingRoutes from './routers/booking.routers.js';
+import userRoutes from './routers/user.routers.js';
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ app.use(express.static("public"))
 // ROUTES
 app.use("/auth", authRoutes)
 app.use("/properties", listingRoutes)
+app.use("/bookings", bookingRoutes)
+app.use("/users", userRoutes)
 
 // Mongoose setup
 mongoose.connect(`${process.env.MONGODB_URL}/${process.env.MONGODB_NAME}`)
