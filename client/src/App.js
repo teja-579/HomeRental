@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import CreateListing from './pages/CreateListing.jsx';
+import ListingDetails from './pages/ListingDetails.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/register' element={<RegisterPage />}/>
           <Route path='/login' element={<LoginPage />}/>
           <Route path='/create-listing' element={<CreateListing />}/>
+          <Route path='/properties/:listingId' element={<ListingDetails />}/>
         </Routes>
       </BrowserRouter>
     </div>
