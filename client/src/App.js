@@ -7,6 +7,7 @@ import CreateListing from './pages/CreateListing.jsx';
 import ListingDetails from './pages/ListingDetails.jsx';
 import TripList from './pages/TripList.jsx';
 import WishList from './pages/WishList.jsx';
+import PropertyList from './pages/PropertyList.jsx';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path='/properties/:listingId' element={<ListingDetails />}/>
           <Route path="/:userId/trips" element={<TripList />} />
           <Route path="/:userId/wishList" element={<WishList />} />
+          <Route path="/:userId/properties" element={<PropertyList />} />
+          {/* <Route path="/:userId/reservations" element={<ReservationList />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
