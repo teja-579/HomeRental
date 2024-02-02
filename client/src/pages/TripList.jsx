@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { setTripList } from "../redux/state";
 import ListingCard from "../components/ListingCard.jsx";
-// import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 
 const TripList = () => {
     const [loading, setLoading] = useState(true);
@@ -58,7 +58,7 @@ const TripList = () => {
             />
           ))}
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
 }

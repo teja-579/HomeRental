@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Loader from "../components/Loader"
 import Navbar from "../components/Navbar";
 import ListingCard from "../components/ListingCard";
-// import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 
 const SearchPage = () => {
   const [loading, setLoading] = useState(true)
@@ -66,7 +66,7 @@ const SearchPage = () => {
           )
         )}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
