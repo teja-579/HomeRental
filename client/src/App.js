@@ -10,6 +10,7 @@ import WishList from './pages/WishList.jsx';
 import PropertyList from './pages/PropertyList.jsx';
 import ReservationList from './pages/ReservationList.jsx';
 import CategoryPage from './pages/CategoryPage.jsx';
+import SearchPage from './pages/SearchPage.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/:userId/properties" element={<PropertyList />} />
           <Route path="/:userId/reservations" element={<ReservationList />} />
           <Route path="/properties/category/:category" element={<CategoryPage />} />
+          <Route path="/properties/search/:search" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </div>

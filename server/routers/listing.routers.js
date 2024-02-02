@@ -112,7 +112,7 @@ router.get("/search/:search", async (req, res) => {
     } else {
       listings = await Listing.find({
         $or: [
-          { category: {$regex: search, $options: "i" } },
+          { category: {$regex: search, $options: "i" } }, // search with regular expression in non case-sensitive option (case may be different in db and in search bar)
           { title: {$regex: search, $options: "i" } },
         ]
       }).populate("creator")
