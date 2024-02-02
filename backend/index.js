@@ -2,10 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import authRoutes from './routers/auth.routers.js'; 
-import listingRoutes from './routers/listing.routers.js';
-import bookingRoutes from './routers/booking.routers.js';
-import userRoutes from './routers/user.routers.js';
+import authRoutes from './routes/auth.routes.js'; 
+import listingRoutes from './routes/listing.routes.js';
+import bookingRoutes from './routes/booking.routes.js';
+import userRoutes from './routes/user.routes.js';
 
 dotenv.config();
 
